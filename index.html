@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ويكي كاسترو</title>
+  <meta name="description" content="مسارات قراءة في ويكيبيديا: اختر موضوعاً واقرأ مقالاته وتابع تقدمك.">
+  <meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#16181c" media="(prefers-color-scheme: dark)">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="#/" class="brand" aria-label="الرئيسية">
+      <img src="icon.svg" alt="" width="28" height="28">
+      <span>ويكي كاسترو</span>
+    </a>
+    <div class="topbar-actions">
+      <button id="themeBtn" class="icon-btn" title="تبديل المظهر" aria-label="تبديل المظهر"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg></button>
+      <button id="settingsBtn" class="icon-btn" title="الإعدادات" aria-label="الإعدادات"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg></button>
+    </div>
+    <div id="readProgress" class="read-progress" hidden><span></span></div>
+  </header>
+
+  <main id="app" tabindex="-1"></main>
+
+  <dialog id="settingsDialog">
+    <form method="dialog">
+      <h2>الإعدادات</h2>
+      <label class="field">
+        <span>حجم خط القراءة</span>
+        <input type="range" id="fontSize" min="15" max="26" step="1">
+      </label>
+      <div class="field">
+        <span>نسخة احتياطية لتقدمك</span>
+        <p class="muted">التقدم محفوظ في هذا المتصفح فقط. صدّره لتنقله لجهاز ثاني.</p>
+        <div class="row">
+          <button type="button" id="exportBtn" class="btn">تصدير</button>
+          <label class="btn">استيراد<input type="file" id="importInput" accept="application/json" hidden></label>
+        </div>
+      </div>
+      <div class="row end"><button class="btn primary">تم</button></div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

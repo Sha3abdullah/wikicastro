@@ -1,0 +1,15 @@
+{
+  "name": "ويكي كاسترو",
+  "short_name": "ويكي كاسترو",
+  "description": "مسارات قراءة في ويكيبيديا مع متابعة التقدم",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f3ec",
+  "theme_color": "#1f5f4a",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
